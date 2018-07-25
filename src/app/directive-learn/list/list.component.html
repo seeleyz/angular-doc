@@ -1,0 +1,7 @@
+<div>滚动示例：</div>
+<div class="list" appInfiniteScroll (scrollEmit)="onScroll()">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngFor="let d of data">{{d}}</li>
+    <li class="list-group-item" *ngIf="isLoading">拼命加载中...</li>
+  </ul>
+</div>

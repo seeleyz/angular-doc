@@ -1,0 +1,62 @@
+<div>
+  <div>
+    <label class="mr-2">
+      <input type="radio" name="directive" value="attribute" [(ngModel)]="item">属性型指令
+    </label>
+    <label class="mr-2">
+      <input type="radio" name="directive" value="structural" [(ngModel)]="item">结构型指令
+    </label>
+    <label>
+      <input type="radio" name="directive" value="scroll" [(ngModel)]="item"> 上拉加载更多
+    </label>
+  </div>
+
+  <!-- Attribute Directives -->
+  <div *ngIf="item === 'attribute'">
+
+  <h3>My First Attribute Directive</h3>
+
+  <p appHighlight>Highlight me!(no highLightColor,no defaultColor)</p>
+
+  <p [appHighlight] ="'blue'">Highlighted in blue!(highLightColor is blue)</p>
+
+  <h5>Pick a highlight color</h5>
+  <div>
+    <label class="mr-2"><input type="radio" name="colors" (click)="color='lightgreen'">Green</label>
+    <label class="mr-2"><input type="radio" name="colors" (click)="color='yellow'">Yellow</label>
+    <label><input type="radio" name="colors" (click)="color='cyan'">Cyan</label>
+  </div>
+  <p [appHighlight]="color">Highlight me!</p>
+  <p [appHighlight]="color" defaultColor="violet">
+    Highlight me too!(defaultColor is violet)
+  </p>
+  </div>
+
+  <!-- Structural Directives -->
+  <div *ngIf="item ==='structural'">
+  <p>
+    The condition is currently
+    <span [ngClass]="{ 'a': !condition, 'b': condition, 'unless': true }">{{condition}}</span>.
+    <button
+      (click)="condition = !condition"
+      [ngClass] = "{ 'a': condition, 'b': !condition }" >
+      Toggle condition to {{condition ? 'false' : 'true'}}
+    </button>
+  </p>
+  <p *appUnless="condition" class="unless a">
+    (A) This paragraph is displayed because the condition is false.
+  </p>
+
+  <p *appUnless="!condition" class="unless b">
+    (B) Although the condition is true,
+    this paragraph is displayed because appUnless is set to false.
+  </p>
+  </div>
+
+
+  <!-- 无限滚动属性指令-practice -->
+  <div *ngIf="item === 'scroll'" class="scroll">
+    <app-list></app-list>
+  </div>
+
+  </div>
