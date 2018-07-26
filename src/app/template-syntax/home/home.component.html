@@ -1,0 +1,37 @@
+<div>
+  <div class="border-top border-success">
+    <h4>模板表达式： </h4>
+    <small>
+        模板表达式产生一个值。 Angular 执行这个表达式，并把它赋值给绑定目标的属性，这个绑定目标可能是 HTML 元素、组件或指令。
+        {{1 + 1}}中所包含的模板表达式是 1 + 1。 在属性绑定中会再次看到模板表达式，它出现在 = 右侧的引号中，就像这样：[property]="expression"。
+    </small>
+    <p>
+      表达式上下文：<br>
+      模板表达式不能引用全局命名空间中的任何东西，比如 window 或 document。它们也不能调用 console.log 或 Math.max。 它们只能引用表达式上下文中的成员；
+    </p>
+    <p>
+      表达式指南：<br>
+      虽然也可以写出相当复杂的模板表达式，但不要那么写。
+      常规是属性名或方法调用。偶尔的逻辑取反 (!) 也还凑合。 其它情况下，应在组件中实现应用和业务逻辑，使开发和测试变得更容易；
+    </p>
+  </div>
+  <div class="border-top border-success">
+    <h4>模板语句：</h4>
+    <small>
+        模板语句用来响应由绑定目标（如 HTML 元素、组件或指令）触发的事件。 模板语句将在事件绑定一节看到，它出现在 = 号右侧的引号中，就像这样：(event)="statement"。
+    </small>
+    <p>语句上下文：<br>
+      模板语句不能引用全局命名空间的任何东西。比如不能引用 window 或 document，也不能调用 console.log 或 Math.max。
+    </p>
+    <p>
+      语句指南：<br>
+      和表达式一样，避免写复杂的模板语句。 常规是函数调用或者属性赋值。
+    </p>
+  </div>
+  <div>
+    <h4>数据绑定语法：</h4>
+    参考<a href="https://angular.cn/guide/template-syntax#binding-syntax-an-overview">绑定语法</a>
+    <div class="text-danger">这句话值得再强调一次： 模板绑定是通过 property 和事件来工作的，而不是 attribute。</div>
+  </div>
+
+</div>

@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'directive-learn',
     loadChildren: './directive-learn/directive-learn.module#DirectiveLearnModule'
+  },
+  {
+    path: 'template-syntax',
+    loadChildren: './template-syntax/template-syntax.module#TemplateSyntaxModule'
   }
 ];
 
