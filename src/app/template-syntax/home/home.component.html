@@ -1,5 +1,5 @@
 <div>
-  <div class="border-top border-success">
+  <div>
     <h4>模板表达式： </h4>
     <small>
         模板表达式产生一个值。 Angular 执行这个表达式，并把它赋值给绑定目标的属性，这个绑定目标可能是 HTML 元素、组件或指令。
@@ -15,7 +15,7 @@
       常规是属性名或方法调用。偶尔的逻辑取反 (!) 也还凑合。 其它情况下，应在组件中实现应用和业务逻辑，使开发和测试变得更容易；
     </p>
   </div>
-  <div class="border-top border-success">
+  <div>
     <h4>模板语句：</h4>
     <small>
         模板语句用来响应由绑定目标（如 HTML 元素、组件或指令）触发的事件。 模板语句将在事件绑定一节看到，它出现在 = 号右侧的引号中，就像这样：(event)="statement"。
@@ -33,5 +33,12 @@
     参考<a href="https://angular.cn/guide/template-syntax#binding-syntax-an-overview">绑定语法</a>
     <div class="text-danger">这句话值得再强调一次： 模板绑定是通过 property 和事件来工作的，而不是 attribute。</div>
   </div>
-
+  <div>
+    <h4>模板引用变量-#heroForm</h4>
+    <app-tem-ref-var></app-tem-ref-var>
+  </div>
+  <div>
+    <h4>内置结构型指令：</h4>
+    <app-built-in-struc-directive></app-built-in-struc-directive>
+  </div>
 </div>
