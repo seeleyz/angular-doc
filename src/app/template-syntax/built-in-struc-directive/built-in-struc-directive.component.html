@@ -1,0 +1,27 @@
+<p>
+  模板输入变量：
+</p>
+<h4 id="ngFor-trackBy">*ngFor trackBy</h4>
+<button (click)="resetHeroes()">Reset heroes</button>
+<button (click)="changeIds()">Change ids</button>
+<button (click)="clearTrackByCounts()">Clear counts</button>
+
+<p><i>without</i> trackBy</p>
+<div class="box">
+  <div #noTrackBy *ngFor="let hero of heroes">({{hero.id}}) {{hero.name}}</div>
+
+  <div id="noTrackByCnt" *ngIf="heroesNoTrackByCount" >
+    Hero DOM elements change #{{heroesNoTrackByCount}} without trackBy
+  </div>
+</div>
+
+<p>with trackBy</p>
+<div class="box">
+  <div #withTrackBy *ngFor="let hero of heroes; trackBy: trackByHeroes">({{hero.id}}) {{hero.name}}</div>
+
+  <div id="withTrackByCnt" *ngIf="heroesWithTrackByCount">
+    Hero DOM elements change #{{heroesWithTrackByCount}} with trackBy
+  </div>
+</div>
+
+<br><br><br>
