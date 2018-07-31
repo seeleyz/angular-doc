@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'template-syntax',
     loadChildren: './template-syntax/template-syntax.module#TemplateSyntaxModule'
+  },
+  {
+    path: 'lifecycle-hooks',
+    loadChildren: './lifecycle-hooks/lifecycle-hooks.module#LifecycleHooksModule'
   }
 ];
 

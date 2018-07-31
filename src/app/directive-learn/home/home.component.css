@@ -21,6 +21,7 @@ button.b, span.b, .unless.b {
 :host {
   flex: 1;
   display: flex;
+  flex-direction: column;
 }
 
 :host>div{

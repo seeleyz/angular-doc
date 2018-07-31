@@ -1,0 +1,40 @@
+<div>
+  <h4>Component Lifecycle Hooks</h4>
+  参考：<a href="https://angular.cn/guide/lifecycle-hooks">lifecycle hooks</a>
+  <div class="text-danger">Note:</div>
+  <h5>钩子调用顺序：Onchanges,OnInit,Docheck,AterContentInit,AfterContentChecked,AfterViewInit,AferViewChecked,OnDestroy</h5>
+  <ol>
+    <li>构造函数：本质上不应该算作angular的钩子，此时<div class="text-danger">输入属性没有被赋值</div>；
+      应该避免复杂的构造函数逻辑，构造函数中除了使用简单的值对局部变量进行初始化之外，什么都不应该做。</li>
+    <li>
+      OnInit()钩子:<br>
+      使用 ngOnInit() 有两个原因：
+        1. 在构造函数之后马上执行复杂的初始化逻辑
+        2. 在 Angular 设置完输入属性之后，对该组件进行准备
+      <div>ngOnInit() 是组件获取初始数据的好地方</div>
+    </li>
+    <li>
+      OnDestroy()钩子:放一些清理逻辑
+    </li>
+    <li>
+      OnChanges()钩子:
+      <div>一旦检测到该组件(或指令)的输入属性的值发生了变化，Angular 就会调用它的 ngOnChanges() 方法。ngOnChanges() 方法是你访问输入属性的第一次机会</div>
+    </li>
+    <li>
+      Docheck()钩子:开销很恐怖!
+    </li>
+    <li>
+      AfterView钩子：Angular 会在每次创建了组件的子视图后调用它们，基于子视图中的每一次数据变更采取行动，它只能通过带@ViewChild装饰器的属性来访问子视图
+    </li>
+    <li>
+      AfterContent钩子：Angular 会在外来内容被投影到组件中之后调用它们
+      <div>
+        内容投影：内容投影是从组件外部导入 HTML 内容，并把它插入在组件模板中指定位置上的一种途径。 永远不要在组件标签的内部放任何内容 —— <b>除非你想把这些内容投影进这个组件中</b>。
+        ng-content 标签是外来内容的占位符。 它告诉 Angular 在哪里插入这些外来内容
+      </div>
+      <div>
+          AfterContent 钩子基于<b>子级内容</b>中值的变化而采取相应的行动，它只能通过带有@ContentChild装饰器的属性来查询到“子级内容”。
+      </div>
+    </li>
+  </ol>
+</div>
