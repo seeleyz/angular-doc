@@ -1,0 +1,6 @@
+<p>
+  添加弹窗的两种方式：动态加载，自定义组件
+</p>
+<input #input value="Message">
+  <button (click)="popup.showAsComponent(input.value)">Show as component</button>
+  <button (click)="popup.showAsElement(input.value)">Show as element</button>
