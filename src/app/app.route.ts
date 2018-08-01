@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'lifecycle-hooks',
     loadChildren: './lifecycle-hooks/lifecycle-hooks.module#LifecycleHooksModule'
+  },
+  {
+    path: 'dynamic-component',
+    loadChildren: './dynamic-component/dynamic-component.module#DynamicComponentModule'
   }
 ];
 
