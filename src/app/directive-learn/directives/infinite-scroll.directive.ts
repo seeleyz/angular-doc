@@ -16,7 +16,7 @@ export class InfiniteScrollDirective {
     const scrollTop = element.scrollTop;
     const clientHeight = element.clientHeight;
     // 如果滚动条滚动高度 + 内容高度 >= 容器高度，就说明到底部了
-    if (clientHeight + scrollTop >= height) {
+    if (height - clientHeight - scrollTop <= 20) {
       this.scrollEmit.emit();
     }
   }
